@@ -42,7 +42,7 @@ def create_performance_chart(df):
     return fig
 
 def main():
-    st.title('股票表現比較器')
+    st.title('Over_get')
 
     stocks = {
         'NVDA': (9.0, 29666.0, 128.3),
@@ -53,7 +53,7 @@ def main():
 
     df = get_stock_data(stocks, stocks)
 
-    st.subheader('股票表現概覽')
+    st.subheader('Over_get')
     st.dataframe(df.style.format({
         'Current Value (TWD)': '{:,.2f}',
         'Reference Value (TWD)': '{:,.2f}',
