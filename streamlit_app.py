@@ -80,9 +80,10 @@ def main():
             col1, col2, col3 = st.columns(3)
             col1.metric("當前價值", f"${row['Current Value (TWD)']:,.2f}", f"{row['Performance (%)']:+.2f}%")
             col2.metric("相對VWRA表現", f"{row['Relative Performance (%)']:+.2f}%")
-            col3.metric("持有期間", f"{row['Holding Period (days']} 天")
+            col3.metric("持有期間", f"{row['Holding Period (days)']:,d} 天")
             st.write(f"參考價值: ${row['Reference Value (TWD)']:,.2f}")
             st.write(f"購入日期: {row['Purchase Date']:%Y-%m-%d}")
 
 if __name__ == "__main__":
     main()
+
