@@ -128,7 +128,7 @@ def create_holding_period_chart(df):
 
 def main():
     st.set_page_config(page_title="Over_get", page_icon="📊", layout="wide")
-    st.title('Over_get 投资组合分析')
+    st.title('我的投資組合')
 
     stocks = {
         'NVDA': (9.0, 29666.0, 128.3, datetime(2024, 8, 8).date()),
@@ -140,11 +140,11 @@ def main():
     with st.spinner('正在获取最新数据...'):
         df, portfolio_perf, vwra_total_perf, excess_return = get_stock_data(stocks)
 
-    st.subheader('投资组合概览')
+    st.subheader('投資組合總覽')
     col1, col2, col3 = st.columns(3)
-    col1.metric("投资组合总收益", f"{portfolio_perf:+.2f}%")
-    col2.metric("VWRA总收益", f"{vwra_total_perf:+.2f}%")
-    col3.metric("超额收益", f"{excess_return:+.2f}%", 
+    col1.metric("投資組合總收益", f"{portfolio_perf:+.2f}%")
+    col2.metric("VWRA大盤收益", f"{vwra_total_perf:+.2f}%")
+    col3.metric("超額報酬", f"{excess_return:+.2f}%", 
                 delta_color="normal" if excess_return >= 0 else "inverse")
 
     tab1, tab2, tab3 = st.tabs(["详细数据", "性能比较", "持有期间"])
