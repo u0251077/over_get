@@ -147,7 +147,7 @@ def main():
     col3.metric("超額報酬", f"{excess_return:+.2f}%", 
                 delta_color="normal" if excess_return >= 0 else "inverse")
 
-    tab1, tab2, tab3 = st.tabs(["详细数据", "性能比较", "持有期间"])
+    tab1, tab2, tab3 = st.tabs(["詳細數據", "績效比較", "持有天數"])
 
     with tab1:
         st.dataframe(df.style.format({
